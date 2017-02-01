@@ -59,4 +59,5 @@
         <a class="btn btn-success" href="{{ route('credentials.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Credential</a><br>
         <a class="btn btn-link" href="{{ route('categories.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
     </div>  
+    @parent
 @stop
