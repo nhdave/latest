@@ -74,12 +74,11 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $project
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
         return view('projects.show', compact('project'));
     }
 
@@ -89,9 +88,8 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        $project = Project::findOrFail($id);
         return view('projects.edit', compact('project'));
     }
 
@@ -102,14 +100,13 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
         $this->validate($request, [
         'name' => 'required|max:255',
         'priority' => 'required|in:low,medium,high',
         ]);
         
-        $project = Project::findOrFail($id);
         $project->name = $request->input("name");
         $project->details = $request->input("details");
         $project->priority = $request->input("priority");
@@ -124,9 +121,8 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        $project = Project::findOrFail($id);
         foreach ($project->updates as $update) {
             $update->delete();
         }

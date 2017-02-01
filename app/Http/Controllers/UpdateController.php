@@ -70,9 +70,8 @@ class UpdateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Update $update)
     {
-        $update = Update::findOrFail($id);
         return view('updates.show', compact('update'));
     }
 
@@ -82,9 +81,8 @@ class UpdateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Update $update)
     {
-        $update = Update::findOrFail($id);
         return view('updates.edit', compact('update'));
     }
 
@@ -95,7 +93,7 @@ class UpdateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Update $update)
     {
         $this->validate($request, [
         'name' => 'required|max:255',
@@ -103,7 +101,6 @@ class UpdateController extends Controller
         'project_id' => 'required',
         ]);
         
-        $update = Update::findOrFail($id);
         $update->name = $request->input("name");
         $update->details = $request->input("details");
         $update->project_id = $request->input("project_id");
@@ -119,9 +116,8 @@ class UpdateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Update $update)
     {
-        $update = Update::findOrFail($id);
         $update->delete();
         return redirect()->route('projects.edit', $update->project_id)->with('message', 'Update deleted successfully.');
     }

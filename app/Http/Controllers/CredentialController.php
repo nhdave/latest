@@ -69,7 +69,7 @@ class CredentialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Credential $credential)
     {
         //
     }
@@ -80,9 +80,8 @@ class CredentialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Credential $credential)
     {
-        $credential = Credential::findOrFail($id);
         $credentials = Credential::all();
         $links = $credential->links;
         $categories = Category::all();
@@ -97,9 +96,8 @@ class CredentialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Credential $credential)
     {
-        $credential = Credential::findOrFail($id);
         $this->validate($request, [
         'name' => 'required|max:255',
         ]); 
@@ -114,9 +112,8 @@ class CredentialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Credential $credential)
     {
-        $credential = Credential::findOrFail($id);
         $links = $credential->links();
         foreach ($links as $link) {
             $link->delete();

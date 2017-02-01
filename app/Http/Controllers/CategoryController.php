@@ -10,6 +10,7 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    private $categories;
      /**
      * Create a new controller instance.
      *
@@ -18,6 +19,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->categories = Category::all();
     }
     
     /**
@@ -27,7 +29,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = $this->categories;
         return view('categories.index', compact('categories'));
     }
 
@@ -83,9 +85,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        $category = Category::findOrFail($id);
         $projects = $category->projects()->paginate(10);
         $credentials = $category->credentials()->paginate(10);
         if ($projects->count() > 0)
@@ -107,7 +108,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
         //
     }
@@ -119,7 +120,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -139,10 +140,6 @@ class CategoryController extends Controller
                 $this->destroy($child);
             }
         }
-
-        
-
-        
         $category->delete();
         return redirect()->route('categories.index')->with('message', 'Category deleted successfully.');
     }

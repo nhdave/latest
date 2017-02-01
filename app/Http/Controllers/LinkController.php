@@ -70,9 +70,8 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Link $link)
     {
-        $link = Link::findOrFail($id);
         return view('links.show', compact('link'));
     }
 
@@ -82,9 +81,8 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Link $link)
     {
-        $link = Link::findOrFail($id);
         return view('links.edit', compact('link'));
     }
 
@@ -95,14 +93,13 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Link $link)
     {
         $this->validate($request, [
         'url' => 'required|url',
         'label' => 'required',
         ]);
 
-        $link = Link::findOrFail($id);
         $link->fill($request->all());
         $link->save();
         return back()->with('message', 'Link updated successfully.');
@@ -114,9 +111,8 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Link $link)
     {
-        $link = Link::findOrFail($id);
         $link->delete();
         return back()->with('message', 'Link deleted successfully.');
     }
