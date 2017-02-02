@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app') 
 
 @section('content')
+@if (Auth::guest())
+    <h1>Go Away!!!</h1>
+@else
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -73,4 +76,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
