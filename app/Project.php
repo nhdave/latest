@@ -10,11 +10,11 @@ class Project extends Model
 
     public function updates()
     {
-    	return $this->hasMany('App\Update');
+    	return $this->hasMany(Update::class);
     }
 
     public function category()
     {
-    	return $this->belongsTo('App\Category');
+    	return $this->belongsTo(Category::class);
     }
 }

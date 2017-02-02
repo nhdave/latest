@@ -1,4 +1,7 @@
-@extends('layouts.app') 
+@extends('layouts.app')
+@section('menu')
+    <li><a href="{{ url('/home') }}">Dashboard</a></li>
+@stop
 @section('header')
     Dave's Vault
 @stop

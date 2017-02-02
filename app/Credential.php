@@ -10,11 +10,11 @@ class Credential extends Model
     
     public function category()
     {
-    	return $this->belongsTo('App\Category');
+    	return $this->belongsTo(Category::class);
     }
     
     public function Links()
     {
-    	return $this->hasMany('App\Link');
+    	return $this->hasMany(Link::class);
     }
 }

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('menu')
+    <li><a href="{{ url('/home') }}">Dashboard</a></li>
+@stop
+
 @section('header')
     <i class="glyphicon glyphicon-edit"></i> Edit Credential Record
 @stop

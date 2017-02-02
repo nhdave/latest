@@ -10,6 +10,6 @@ class Update extends Model
 
     public function project()
     {
-    	return $this->belongsTo('App\Project');
+    	return $this->belongsTo(Project::class);
     }
 }
