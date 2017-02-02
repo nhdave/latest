@@ -34,4 +34,5 @@
             </form><br>
         <a class="btn btn-link" href="{{ url('projects')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
     </div>
+    @parent
 @stop
