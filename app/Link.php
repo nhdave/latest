@@ -10,6 +10,6 @@ class Link extends Model
     
     public function credential()
     {
-    	return $this->belongsTo('App\Credential');
+    	return $this->belongsTo(Credential::class);
     }
 }

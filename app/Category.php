@@ -8,24 +8,14 @@ class Category extends Model
 {
     protected $fillable = ['name', 'parent_id'];
 
-    public function children()
-    {
-    	return Category::where('parent_id', $this->id)->get();
-    }
-
-    public static function roots()
-    {
-    	return Category::orderBy('name', 'asc')->where('parent_id', null)->get();
-    }
-    
     public function credentials()
     {
-    	return $this->hasMany('App\Credential');
+    	return $this->hasMany(Credential::class);
     }
 
     public function projects()
     {
-        return $this->hasMany('App\Project');
+        return $this->hasMany(Project::class);
     }
 
     public function parent()

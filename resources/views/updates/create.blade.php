@@ -1,7 +1,12 @@
- extends('layouts.app')
- @section('header')
+extends('layouts.app')
+
+@section('menu')
+    <li><a href="{{ url('/home') }}">Dashboard</a></li>
+@stop
+
+@section('header')
      <i class="glyphicon glyphicon-plus"></i> Create an Update
- @stop
+@stop
 
 @section('content')
     <div class="row" align="center">
