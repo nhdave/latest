@@ -18,6 +18,11 @@ class Category extends Model
         return $this->hasMany(Project::class);
     }
 
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
     public function parent()
     {
         return Category::findOrFail($this->parent_id);

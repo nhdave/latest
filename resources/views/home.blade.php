@@ -1,5 +1,9 @@
 @extends('layouts.app') 
 
+@section('menu')
+    <li><a href="{{ url('/articles') }}">Articles</a></li>
+@stop
+
 @section('header')
     <i class="glyphicon glyphicon-dashboard"></i>Dashboard
 @stop

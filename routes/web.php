@@ -29,3 +29,4 @@ Route::resource('links', 'LinkController');
 Route::resource('credentials', 'CredentialController');
 Route::resource('projects', 'ProjectController');
 Route::resource('updates', 'UpdateController');
+Route::resource('articles', 'ArticleController');

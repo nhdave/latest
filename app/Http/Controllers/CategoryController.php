@@ -86,13 +86,18 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        $articles = $category->articles()->get();
         $projects = $category->projects()->paginate(10);
         $credentials = $category->credentials()->paginate(10);
         if ($projects->count() > 0)
         {
             return view('projects.index', compact('projects'));
         }
-        else if($credentials->count() > 0)
+        else if ($articles->count() > 0)
+        {
+            return view('articles.index', compact('articles'));
+        }
+        else if ($credentials->count() > 0)
         {
             return view('categories.credentials', compact('credentials', 'category'));
         }
