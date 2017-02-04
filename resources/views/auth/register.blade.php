@@ -2,7 +2,7 @@
 
 @section('content')
 @if (Auth::guest())
-    <h1>Go Away!!!</h1>
+    <h1 align="center">Go Away!!!</h1>
 @else
 <div class="container">
     <div class="row">

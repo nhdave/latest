@@ -10,7 +10,7 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-    private $categories;
+    
      /**
      * Create a new controller instance.
      *
@@ -19,7 +19,6 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->categories = Category::all();
     }
     
     /**
@@ -29,7 +28,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categories;
+        $categories = Category::all();
         return view('categories.index', compact('categories'));
     }
 

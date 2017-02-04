@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-L/tgI3wSsbb3f/nW9V6Yqlaw3Gj7mpE56LWrhew/c8MIhAYWZ/FNirA64AVkB5pI" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-L/tgI3wSsbb3f/nW9V6Yqlaw3Gj7mpE56LWrhew/c8MIhAYWZ/FNirA64AVkB5pI" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <!-- Scripts -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -60,11 +60,11 @@
         <div class="container">
             @section('footer')
                 <div class="row" align="center">
-                    <a href="https://laravel.com/docs" target="_blank">Documentation</a>
-                    <a href="https://laracasts.com" target="_blank"> Laracasts</a>
-                    <a href="https://laravel-news.com" target="_blank"> News</a>
-                    <a href="https://forge.laravel.com" target="_blank"> Forge</a>
-                    <a href="https://github.com/laravel/ laravel" target="_blank">GitHub</a>
+                    <a href="https://laravel.com/docs" target="_blank">Documentation &nbsp;</a>
+                    <a href="https://laracasts.com" target="_blank">&nbsp; Laracasts &nbsp;</a>
+                    <a href="https://laravel-news.com" target="_blank">&nbsp; News &nbsp;</a>
+                    <a href="https://forge.laravel.com" target="_blank">&nbsp; Forge &nbsp;</a>
+                    <a href="https://github.com/laravel/ laravel" target="_blank">&nbsp;GitHub</a>
                 </div>
             @show
         </div>
