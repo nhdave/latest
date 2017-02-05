@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     @section('styles')
-        @include('partials.spacelab')
+        @include('partials.darkly')
     @show
     <!-- Scripts -->
     @section('scripts')

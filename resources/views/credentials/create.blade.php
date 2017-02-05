@@ -41,7 +41,7 @@
                   @endif
               </div>
           </div>
-          <div class="form-group">
+          <div class="form-group @if($errors->has('category_id')) has-error @endif">
             <label for="category_id" class="control-label col-xs-2">Category ID</label>
               <div class="col-xs-8">
                 <select id="category_id" name="category_id" class="form-control"/>
@@ -53,6 +53,9 @@
         			   @endif
                  @endforeach
   				       </select>
+								 @if($errors->has("category_id"))
+                  <small></small><span class="help-block">{{ $errors->first("category_id") }}</span></small>
+                  @endif	
               </div>
           </div>
           <div class="form-group" align="center">
