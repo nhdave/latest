@@ -40,7 +40,7 @@
             <label class="control-label col-sm-2" for="priority-field">Priority</label>
             <div class="col-sm-8">
               <select id="priority" name="priority" class="form-control"/>
-                          <option value="" disabled="disabled" selected="selected">{{$project->priority}}</option>
+                          <option value="{{$project->priority}}"  selected="selected">{{$project->priority}}</option>
                           <option>high</option>
                           <option>medium</option>
                           <option>low</option>
@@ -51,8 +51,26 @@
               @endif
           </div>
 
+          <div class="form-group @if($errors->has('category_id')) has-error @endif">
+                    <label for="category_id" class="control-label col-xs-2">Category ID</label>
+                    <div class="col-xs-8">
+                        <select id="category_id" name="category_id" class="form-control"/>
+                            <option value="{{$project->category_id}}"  selected="selected">{{$project->category->name}}</option>
+                            @foreach( $categories->where('parent_id', null) as $listItem)
+                                <option value="{{$listItem->id}}">{{ $listItem->name }}</option>
+                                @if (($categories->where('parent_id', $listItem->id)->count()) > 0)
+                                    @include('partials.selSubCat')
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    @if($errors->has("category_id"))
+                        <small><span class="help-block">{{ $errors->first("category_id") }}</span></small>
+                    @endif
+                </div>
+
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success">Update</button><br>
+            <button type="submit" class="btn btn-primary">Update</button><br>
           </div>
         </form>
         </div>
@@ -136,7 +154,7 @@
           </div>
 
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success">Create</button><br>
+            <button type="submit" class="btn btn-primary">Create</button><br>
             <a class="btn btn-link" href="{{ url('projects')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
           </div>
         </form>

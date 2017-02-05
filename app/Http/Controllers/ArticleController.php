@@ -9,6 +9,16 @@ use App\Category;
 class ArticleController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -40,8 +50,9 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'title' => 'required|max:55',
+        'title' => 'required|max:25',
         'body' => 'required|min:25',
+        'category_id' => 'required',
         ]);
         
         $article = new Article();
@@ -97,6 +108,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return back()->with('message', 'Article deleted successfully.');
     }
 }

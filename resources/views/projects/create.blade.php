@@ -9,12 +9,11 @@
 @stop
 
 @section('content')
-	
     <div class="container" align="center">
-    	<div class="row">
-    		<div class="col-md-8 col-md-offset-2">
-            	<form class="form-horizontal" action="{{ route('projects.store') }}" method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="row">
+    		    <div class="col-md-8 col-md-offset-2">
+                <form class="form-horizontal" action="{{ route('projects.store') }}" method="POST">
+                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('name')) has-error @endif">
                        <label class="control-label col-sm-2" for="name-field">Name</label>
@@ -34,7 +33,7 @@
                         <small><span class="help-block">{{ $errors->first("details") }}</span></small>
                        @endif
                 </div>
-                <div class="form-group">
+                <div class="form-group @if($errors->has('priority')) has-error @endif">
                        <label class="control-label col-sm-2" for="priority">Priority</label>
                        <div class="col-sm-8">
                         <select id="priority" name="priority" class="form-control"/>
@@ -44,28 +43,35 @@
                           <option>low</option>
                          </select>
                         </div>
-                       
+                        @if($errors->has("priority"))
+                        <small><span class="help-block">{{ $errors->first("priority") }}</span></small>
+                        @endif
                 </div>
-                <div class="form-group">
-            <label for="category_id" class="control-label col-xs-2">Category ID</label>
-              <div class="col-xs-8">
-                <select id="category_id" name="category_id" class="form-control"/>
-                <option value="" disabled="disabled" selected="selected">Please select a category</option>
-                @foreach( $categories->where('parent_id', null) as $listItem)
-                <option value="{{$listItem->id}}">{{ $listItem->name }}</option>
-                 @if (($categories->where('parent_id', $listItem->id)->count()) > 0)
-                 @include('partials.selSubCat')
-                 @endif
-                 @endforeach
-                 </select>
-              </div>
-          </div>
+                <div class="form-group @if($errors->has('category_id')) has-error @endif">
+                    <label for="category_id" class="control-label col-xs-2">Category ID</label>
+                    <div class="col-xs-8">
+                        <select id="category_id" name="category_id" class="form-control"/>
+                            <option value="" disabled="disabled" selected="selected">Please select a category</option>
+                            @foreach( $categories->where('parent_id', null) as $listItem)
+                                <option value="{{$listItem->id}}">{{ $listItem->name }}</option>
+                                @if (($categories->where('parent_id', $listItem->id)->count()) > 0)
+                                    @include('partials.selSubCat')
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    @if($errors->has("category_id"))
+                        <small><span class="help-block">{{ $errors->first("category_id") }}</span></small>
+                    @endif
+                </div>
+
                 <div class="form-group" align="center">
-                    <button type="submit" class="btn btn-success">Create</button><br>
+                    <button type="submit" class="btn btn-primary">Create</button><br>
                     <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
                     
                 </div>
-            </form>
+
+                </form>
             </div>
         </div>
     </div>

@@ -58,7 +58,7 @@
               </div>
           </div>
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Update</button><br>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Update</button><br>
               <a class="btn btn-link" href="{{ route('categories.show', $credential->category_id) }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
           </div>
       </form>
@@ -140,7 +140,7 @@
                        
                 </div>
                 <div class="form-group" align="center">
-                    <button type="submit" class="btn btn-success">Create</button><br>
+                    <button type="submit" class="btn btn-primary">Create</button><br>
                     
                 </div>
             </form>

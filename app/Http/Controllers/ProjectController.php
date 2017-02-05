@@ -56,8 +56,10 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'name' => 'required|max:255',
+        'name' => 'required|max:55',
+        'details' => 'required|min:15',
         'priority' => 'required|in:low,medium,high',
+        'category_id' => 'required',
         ]);
         
         $project = new Project();
@@ -90,7 +92,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+        $categories = Category::all();
+        $spacer = '___';
+        return view('projects.edit', compact('project', 'categories', 'spacer'));
     }
 
     /**
@@ -110,9 +114,10 @@ class ProjectController extends Controller
         $project->name = $request->input("name");
         $project->details = $request->input("details");
         $project->priority = $request->input("priority");
+        $project->category_id = $request->input("category_id");
         $project->save();
         
-        return redirect()->route('projects.edit', $id)->with('message', 'Project updated successfully.');
+        return redirect()->route('projects.edit', $project->id)->with('message', 'Project updated successfully.');
     }
 
     /**

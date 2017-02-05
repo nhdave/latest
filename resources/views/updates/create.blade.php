@@ -45,7 +45,7 @@ extends('layouts.app')
           </div>
 
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success">Create</button><br>
+            <button type="submit" class="btn btn-primary">Create</button><br>
             <a class="btn btn-link" href="{{ url('projects')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
           </div>
         </form>

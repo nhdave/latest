@@ -47,7 +47,7 @@
           </div>
 
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success">Update</button><br>
+            <button type="submit" class="btn btn-primary">Update</button><br>
             <a class="btn btn-link" href="{{ route('projects.edit', $update->project_id)}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
           </div>
         </form>

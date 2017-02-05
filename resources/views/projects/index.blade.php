@@ -52,7 +52,7 @@
     @endif
 
     <div align="center">
-        <a class="btn btn-success" href="{{ route('projects.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Project</a><br>
+        <a class="btn btn-primary" href="{{ route('projects.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Project</a><br>
         <a class="btn btn-link" href="{{ url('/categories')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
     </div> 
 </div>

@@ -44,7 +44,7 @@
                        @endif
                 </div>
                 <div class="form-group" align="center">
-                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i> Update</button><br>
+                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i> Update</button><br>
                     <a class="btn btn-link" href="{{ route('links.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
                 </div>
             </form>

@@ -56,7 +56,7 @@
               </div>
           </div>
           <div class="form-group" align="center">
-            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Create</button><br>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create</button><br>
               <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
           </div>
       </form>
