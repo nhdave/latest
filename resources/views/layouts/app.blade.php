@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     @section('styles')
-        @include('partials.spacelab')
+        @include('partials.slate')
     @show
     <!-- Scripts -->
     @section('scripts')
@@ -25,20 +25,23 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
-            @section('top')
-                <h4 align="center"> <strong>{{ date('l jS \of F Y h:i:s A') }}</strong> </h4>
-            @show
-        </div>
-        
         @include('partials.nav')
+      
+             
         <div class="container">
             <div class="page-header clearfix" align="center">
                 <h1>
                     @yield('header')
-
                 </h1>
             </div>
+        </div>
+      
+        <div class="container">
+          <div class="row">
+            @section('top')
+                <h4 align="center"> <strong>{{ date('l jS \of F Y h:i:s A') }}</strong> </h4>
+            @show
+          </div>
         </div>
     
         <div class="container">

@@ -37,7 +37,7 @@ class ArticleController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $spacer = '___';
+        $spacer = '&nbsp; &nbsp; &nbsp;';
         return view('articles.create', compact('categories', 'spacer'));
     }
 

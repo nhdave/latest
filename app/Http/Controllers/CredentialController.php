@@ -41,7 +41,7 @@ class CredentialController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $spacer = '___';
+        $spacer = '&nbsp; &nbsp; &nbsp;';
         return view('credentials.create', compact('categories', 'spacer'));
     }
 
@@ -88,7 +88,7 @@ class CredentialController extends Controller
         $credentials = Credential::all();
         $links = $credential->links;
         $categories = Category::all();
-        $spacer = '___';
+        $spacer = '&nbsp; &nbsp; &nbsp;';
        return view('credentials.edit', compact('credential', 'categories', 'links', 'credentials', 'spacer'));
     }
 

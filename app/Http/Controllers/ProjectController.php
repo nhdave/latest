@@ -43,7 +43,7 @@ class ProjectController extends Controller
     public function create()
     {
         $categories = Category::all();
-      	$spacer = '___';
+      	$spacer = '&nbsp; &nbsp; &nbsp;';
         return view('projects.create', compact('categories', 'spacer'));
     }
 
@@ -93,7 +93,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $categories = Category::all();
-        $spacer = '___';
+        $spacer = '&nbsp; &nbsp; &nbsp;';
         return view('projects.edit', compact('project', 'categories', 'spacer'));
     }
 
