@@ -55,8 +55,6 @@ class CredentialController extends Controller
     {
         $this->validate($request, [
         'name' => 'required|max:255',
-        'user_name' => 'required',
-        'password' => 'required',
         'category_id' => 'required',
         ]);
         
@@ -103,8 +101,6 @@ class CredentialController extends Controller
     {
         $this->validate($request, [
         'name' => 'required|max:255',
-        'user_name' => 'required',
-        'password' => 'required',
         'category_id' => 'required',
         ]); 
         $credential->fill($request->all());
