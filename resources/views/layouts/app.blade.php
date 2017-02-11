@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     @section('styles')
-        @include('partials.slate')
+        @include('partials.base')
     @show
     <!-- Scripts -->
     @section('scripts')

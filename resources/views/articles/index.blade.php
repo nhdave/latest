@@ -7,7 +7,7 @@
 @section('content') 
 
 @unless ($articles->count())
-<h3 class="text-center alert alert-info">No Articles</h3> 
+<h3 class="text-center alert alert-success">No Articles</h3> 
 @endunless 
 
 @foreach ($articles->chunk(2) as $chunk)

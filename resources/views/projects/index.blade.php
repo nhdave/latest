@@ -44,7 +44,7 @@
         </div>
         
     @else
-        <h3 class="text-center alert alert-info">Empty!</h3>
+        <h3 class="text-center alert alert-success">Empty!</h3>
     @endif
 
     <div align="center">
