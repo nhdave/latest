@@ -11200,7 +11200,10 @@ __webpack_require__(31);
 Vue.component('example', __webpack_require__(34));
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    message: 'Our king is dead! Send help!'
+  }
 });
 
 /***/ }),

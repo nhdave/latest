@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    Categories
+    <i class="glyphicon glyphicon-align-justify"></i> All Categories
 @stop
 
 @section('content')
@@ -34,7 +34,6 @@
 </div>
 <hr>
 @endforeach
-
 
 <div align="center"><a class="btn btn-primary" href="{{ route('categories.create') }}"><i class="glyphicon glyphicon-plus"></i> New Root Category</a><br>
         <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>

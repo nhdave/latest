@@ -1,14 +1,14 @@
 @extends('layouts.app') 
 
 @section('header')
-    <i class="glyphicon glyphicon-dashboard"></i>Dashboard
+    <i class="glyphicon glyphicon-dashboard"></i> Admin Dashboard
 @stop
 
 @section('content')
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <h3 align="center"><i class="glyphicon glyphicon-wrench"></i>Content Actions</h3><hr>
+        <h3 align="center"><i class="glyphicon glyphicon-wrench"></i> Content Actions</h3><hr>
             <div class="list-group">
             
                 <div class="col-md-6  list-group-item" align="center">

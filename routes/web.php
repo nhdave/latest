@@ -19,9 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('categories/createSub/{parentId}', 'CategoryController@createSub');
-Route::get('test', function() {
-	$categories = DB::table('categories')->get();
-	return $categories;
+Route::get('vue', function() {
+	return view('vue');
 });
 
 Route::resource('categories', 'CategoryController');

@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('header')
-    <i class="glyphicon glyphicon-align-justify"></i>  Existing Projects
+    <i class="glyphicon glyphicon-align-justify"></i>  All Projects
 @stop
 
 @section('content')
+@unless ($projects->count())
+<h3 class="text-center alert alert-success">No Projects</h3> 
+@endunless 
 <div class="col-xs-6 col-xs-offset-3">    
     @if($projects->count())
         <table class="table table-condensed table-striped table-bordered">
@@ -43,8 +46,6 @@
             {!! $projects->render() !!}
         </div>
         
-    @else
-        <h3 class="text-center alert alert-success">Empty!</h3>
     @endif
 
     <div align="center">
