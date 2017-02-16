@@ -27,6 +27,7 @@
                           <li><a href="{{ url('/categories') }}">Categories</a></li>
                           <li><a href="{{ url('/projects') }}">Projects</a></li>
                           <li><a href="{{ url('/articles') }}">Articles</a></li>
+                          <li><a href="{{ url('/vue') }}">Vue</a></li>
                         @endif
                         @show
                     </ul>

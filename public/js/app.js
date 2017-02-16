@@ -11200,9 +11200,11 @@ __webpack_require__(31);
 Vue.component('example', __webpack_require__(34));
 
 var app = new Vue({
-  el: '#app',
+  el: '.container-fluid',
   data: {
-    message: 'Our king is dead! Send help!'
+    bgColor: {
+      backgroundColor: "#F7CDAE"
+    }
   }
 });
 
@@ -12059,6 +12061,7 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //

@@ -24,57 +24,50 @@
     @show
 </head>
 <body>
-    <div id="app">
+    <div class="container-fluid" :style="bgColor">
         @include('partials.nav')
       
              
-        <div class="container">
-            <div class="page-header clearfix" align="center">
-                <h1>
-                    @yield('header')
-                </h1>
-            </div>
+        <div class="page-header clearfix" align="center">
+           <h1>@yield('header')</h1>
         </div>
       
-        <div class="container">
-          <div class="row">
-            @section('top')
-                <h4 align="center"> <strong>{{ date('l jS \of F Y h:i:s A') }}</strong> </h4>
-            @show
-          </div>
+        <div class="row">
+          @section('top')
+            <h4 align="center"> <strong>{{ date('l jS \of F Y h:i:s A') }}</strong> </h4>
+          @show
         </div>
     
-        <div class="container">
-            <div class="row">
-                @if (session('message'))
-                    <div class="alert alert-success">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        {{ session('message') }}
-                    </div>
-                @endif
-            </div>
+        <div class="row">
+          @if (session('message'))
+            <div class="alert alert-success">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session('message') }}
+              </div>
+          @endif
         </div>
 
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
+        
     
        
-        
-        <div class="container">
-            @section('footer')
-                <div class="row" align="center">
-                    <a href="https://laravel.com/docs" target="_blank">Documentation &nbsp;</a>
-                    <a href="https://laracasts.com" target="_blank">&nbsp; Laracasts &nbsp;</a>
-                    <a href="https://laravel-news.com" target="_blank">&nbsp; News &nbsp;</a>
-                    <a href="https://forge.laravel.com" target="_blank">&nbsp; Forge &nbsp;</a>
-                    <a href="https://github.com/laravel/ laravel" target="_blank">&nbsp;GitHub</a>
-                </div>
-            @show
-        </div>
+        <div class="row" align="center">
+        @section('footer')
+          <a href="https://laravel.com/docs" target="_blank">Documentation &nbsp;</a>
+          <a href="https://laracasts.com" target="_blank">&nbsp; Laracasts &nbsp;</a>
+          <a href="https://laravel-news.com" target="_blank">&nbsp; News &nbsp;</a>
+          <a href="https://forge.laravel.com" target="_blank">&nbsp; Forge &nbsp;</a>
+          <a href="https://github.com/laravel/ laravel" target="_blank">&nbsp;GitHub</a>
+       @show
+       </div>
+      
+      <div class="row" align="center">
+        <input type="color" v-model="bgColor.backgroundColor" />
+      </div>
     </div>
         <!-- Scripts -->
         <script src="/js/app.js"></script>
+        
 
 </body>
 </html>
