@@ -5,10 +5,12 @@
 @stop
 
 @section('content')
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3"> 
 @unless ($projects->count())
 <h3 class="text-center alert alert-success">No Projects</h3> 
 @endunless 
-<div class="col-xs-6 col-xs-offset-3">    
+   
     @if($projects->count())
         <table class="table table-condensed table-striped table-bordered">
                     <thead>
@@ -47,11 +49,16 @@
         </div>
         
     @endif
-
-    <div align="center">
-        <a class="btn btn-primary" href="{{ route('projects.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Project</a><br>
-        <a class="btn btn-link" href="{{ url('/categories')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-    </div> 
+	<div align="center">
+	<a class="btn btn-primary" href="{{ route('articles.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Project</a><br>
+	<a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+</div>
+	</div>
+	
 </div>
 
+	
+	
 @stop
+
+

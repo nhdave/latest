@@ -19,7 +19,7 @@ const app = new Vue({
     el: '.container-fluid',
       data: {
         bgColor: {
-          backgroundColor: "#F7CDAE"
+          backgroundColor: "#F0EFF1"
         }
       }
 });

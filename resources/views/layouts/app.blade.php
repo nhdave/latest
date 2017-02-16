@@ -51,23 +51,26 @@
         
     
        
-        <div class="row" align="center">
+     <div class="row" align="center">   
         @section('footer')
+      
           <a href="https://laravel.com/docs" target="_blank">Documentation &nbsp;</a>
           <a href="https://laracasts.com" target="_blank">&nbsp; Laracasts &nbsp;</a>
           <a href="https://laravel-news.com" target="_blank">&nbsp; News &nbsp;</a>
           <a href="https://forge.laravel.com" target="_blank">&nbsp; Forge &nbsp;</a>
           <a href="https://github.com/laravel/ laravel" target="_blank">&nbsp;GitHub</a>
+       
        @show
-       </div>
+     </div>
       
       <div class="row" align="center">
         <input type="color" v-model="bgColor.backgroundColor" />
       </div>
     </div>
+  </body>
         <!-- Scripts -->
         <script src="/js/app.js"></script>
         
 
-</body>
+
 </html>

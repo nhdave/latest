@@ -5,10 +5,10 @@
 @stop
 
 @section('content')
-@foreach($categories->where('parent_id', null)->chunk(2) as $list)
+@foreach($categories->where('parent_id', null)->chunk(3) as $list)
 <div class="row">
 	@foreach($list as $listItem)
-    <div class="col-md-6">
+    <div class="col-md-4">
     	<ul>
     	<li class="list-group-item"><strong>{{$listItem->name}}</strong>
                 

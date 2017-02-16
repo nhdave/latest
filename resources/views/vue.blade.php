@@ -1,6 +1,9 @@
 <html>
 <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Styles -->
+    @section('styles')
+        @include('partials.base')
+    @show
     <title>Paint Me</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script>
@@ -10,6 +13,7 @@
     </script>
 </head>
 <body>
+  @include('partials.nav')
       <div class="container-fluid" :style="bgColor">
         <div class="centered">
           <h1>Paint this background!</h1>
