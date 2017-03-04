@@ -11,9 +11,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <img class="pull-left" src="http://home.nhdave.com/images/fire.png" alt="My test image">
+                    &nbsp;
+                    <a class="navbar-brand pull-right" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -27,7 +30,6 @@
                           <li><a href="{{ url('/categories') }}">Categories</a></li>
                           <li><a href="{{ url('/projects') }}">Projects</a></li>
                           <li><a href="{{ url('/articles') }}">Articles</a></li>
-                          <li><a href="{{ url('/vue') }}">Vue</a></li>
                         @endif
                         @show
                     </ul>

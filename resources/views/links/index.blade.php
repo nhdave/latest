@@ -48,11 +48,9 @@
             @endif
     </div>
     </div>
-@endsection
-@section('footer')
     <div align="center">
-        <a class="btn btn-primary" href="{{ route('links.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Link</a><br>
-        <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-    </div>
-    @parent  
-@stop
+		<hr>
+		<a class="btn btn-primary" href="{{ route('links.create') }}"><i class="glyphicon glyphicon-plus"></i> New Link</a><br>
+  	<a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+  </div>
+@endsection

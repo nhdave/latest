@@ -11200,12 +11200,8 @@ __webpack_require__(31);
 Vue.component('example', __webpack_require__(34));
 
 var app = new Vue({
-  el: '.container-fluid',
-  data: {
-    bgColor: {
-      backgroundColor: "#F0EFF1"
-    }
-  }
+  el: '#app'
+
 });
 
 /***/ }),

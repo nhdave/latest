@@ -16,10 +16,6 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '.container-fluid',
-      data: {
-        bgColor: {
-          backgroundColor: "#F0EFF1"
-        }
-      }
+    el: '#app',
+      
 });

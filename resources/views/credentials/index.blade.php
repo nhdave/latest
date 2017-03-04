@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-8 col-md-offset-2">
     @if($credentials->count())
                 <table class="table table-condensed table-striped table-bordered">
                     <thead>
@@ -53,11 +53,9 @@
             @endif
     </div>
     </div>
-@endsection
-@section('footer')
     <div align="center">
-        <a class="btn btn-primary" href="{{ route('credentials.create') }}"><i class="glyphicon glyphicon-plus"></i> Create New Credential</a><br>
-        <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-    </div> 
-    @parent 
-@stop
+		<hr>
+		<a class="btn btn-primary" href="{{ route('credentials.create') }}"><i class="glyphicon glyphicon-plus"></i> New Credential</a><br>
+  	<a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+  </div>
+@endsection

@@ -7,7 +7,7 @@
                     								<input type="hidden" name="_token" value="{{ csrf_token() }}">
                     								<button type="submit" class="btn btn-xs btn-danger pull-right"><i class="glyphicon glyphicon-xs glyphicon-remove"></i></button>
                 								</form>
-                								<span class="pull-right"> | </span>
+                								<span class="pull-right">&nbsp;</span>
                                         		<a href="{{url('categories/createSub', $listItem->id)}}" class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></a>
                                                 </li>
         @if (($categories->where('parent_id', $listItem->id)->count()) > 0)

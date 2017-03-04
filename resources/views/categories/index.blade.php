@@ -5,10 +5,10 @@
 @stop
 
 @section('content')
-@foreach($categories->where('parent_id', null)->chunk(3) as $list)
+@foreach($categories->where('parent_id', null)->chunk(2) as $list)
 <div class="row">
 	@foreach($list as $listItem)
-    <div class="col-md-4">
+    <div class="col-md-6">
     	<ul>
     	<li class="list-group-item"><strong>{{$listItem->name}}</strong>
                 
@@ -17,7 +17,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-xs btn-danger pull-right"><i class="glyphicon glyphicon-xs glyphicon-remove "></i></button>
                 </form>
-                <span class="pull-right"> | </span>
+                <span class="pull-right">&nbsp;</span>
                 <a href="{{url('categories/createSub', $listItem->id)}}" class="btn btn-xs btn-success pull-right"> <span class="glyphicon glyphicon-plus"></span></a>
 
                 
@@ -30,13 +30,14 @@
     </div>
 
     @endforeach
-
+		
 </div>
-<hr>
-@endforeach
 
-<div align="center"><a class="btn btn-primary" href="{{ route('categories.create') }}"><i class="glyphicon glyphicon-plus"></i> New Root Category</a><br>
-        <a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-        </div>
-        <br>
+@endforeach
+	<div align="center">
+		<hr>
+		<a class="btn btn-primary" href="{{ route('categories.create') }}"><i class="glyphicon glyphicon-plus"></i> New Root Category</a><br>
+  	<a class="btn btn-link" href="{{ url('/home') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+  </div>
 @stop
+

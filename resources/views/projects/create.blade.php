@@ -7,13 +7,13 @@
 @section('content')
     <div class="container" align="center">
         <div class="row">
-    		    <div class="col-md-8 col-md-offset-2">
+    		    <div class="col-xs-8 col-xs-offset-2">
                 <form class="form-horizontal" action="{{ route('projects.store') }}" method="POST">
                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('name')) has-error @endif">
                        <label class="control-label col-sm-2" for="name-field">Name</label>
-                       <div class="col-sm-8">
+                       <div class="col-xs-8">
                         <input type="text" id="name-field" name="name" class="form-control" value="{{ old("name") }}"/>
                         </div>
                        @if($errors->has("name"))
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group @if($errors->has('details')) has-error @endif">
                        <label class="control-label col-sm-2" for="details-field">Details</label>
-                       <div class="col-sm-8">
+                       <div class="col-xs-8">
                         <input type="text" id="details-field" name="details" class="form-control" value="{{ old("details") }}" />
                         </div>
                        @if($errors->has("details"))
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group @if($errors->has('priority')) has-error @endif">
                        <label class="control-label col-sm-2" for="priority">Priority</label>
-                       <div class="col-sm-8">
+                       <div class="col-xs-8">
                         <select id="priority" name="priority" class="form-control"/>
                           <option value="" disabled="disabled" selected="selected">Please select a priority</option>
                           <option>high</option>

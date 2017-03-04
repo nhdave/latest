@@ -20,12 +20,7 @@
                     @endforeach
                 </ul>
             </ul>
-        </div>
-    </div>
-@stop
-
-@section('footer')
-	<div align="center">
+				<div align="center">
     	<a class="btn btn-xs btn-warning" href="{{ route('projects.edit', $project->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
         	<form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             	<input type="hidden" name="_method" value="DELETE">
@@ -34,5 +29,7 @@
             </form><br>
         <a class="btn btn-link" href="{{ url('projects')}}"><i class="glyphicon glyphicon-backward"></i> Back</a>
     </div>
-    @parent
+        </div>
+		
+    </div>
 @stop
